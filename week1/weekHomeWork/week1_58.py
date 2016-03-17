@@ -1,4 +1,5 @@
-#coding:utf-8
+#!/usr/bin/env
+# -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
 import requests
 
@@ -30,7 +31,7 @@ def get_item_info(who_sells):#获取详情
             'date':soup.select('.time')[0].text,
             'price':soup.select('.price')[0].text,
             'area':list(soup.select('.c_25d')[0].stripped_strings) if soup.find_all('span','c_25d') else None,
-            'cate':'个人' if who_sells == 0 else '商家',
+            'cate': u'个人' if who_sells == 0 else u'商家',
             'views':get_views_from(url)
         }
         print(data)
