@@ -60,7 +60,8 @@ def get_item_info(url):
             'type': type,
             'price': price,
             'address': address,
-            'status': new_old
+            'status': new_old,
+            'url':url
         }
         item_info.insert_one(data)
         print(data)
